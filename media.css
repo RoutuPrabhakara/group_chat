@@ -1,0 +1,23 @@
+@media (max-width:576px){
+    #chat{
+        width: 100%;
+    }
+    header, .left, .middle{
+        display: none !important;
+    }
+    .message{
+        width: 100%;
+    }
+    #chat{
+        padding: 10px;
+    }
+    /* li{
+        display: flex;
+        justify-content: end;
+    } */
+    li div{
+        padding: 5px 10px !important;
+        font-size: 0.9rem;
+        /* max-width: 50%; */
+    }
+}

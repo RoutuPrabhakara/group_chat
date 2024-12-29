@@ -5,31 +5,157 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Group Chat</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./media.css">
 </head>
 <body>
         <!-- <h1>Chat Screen</h1> -->
        
         <audio src="./assets/media/sent_sound.mp3" id="sound"></audio>
-        <header>
+        <!-- <header>
             <div>
                 <h4 id="email"></h4>
                 <p>Welcome to Group Chat</p>
             </div>
 
             <button class="logout" onclick="logoutHanlder()" title="click to logout">Logout</button>
-        </header>
+        </header> -->
     
-    <hr>
-<div class="message">
+    <!-- <hr> -->
+<!-- <div class="message">
     
-    <input type="text" placeholder="type here.." id="message" onkeypress="sendEnter(event)">
-    <button onclick="messageSendhanlder()">send</button>
-</div>
-    <ul id="chat"></ul>
+   
+</div> -->
+    
+     <div class="container">
+        <div class="left">
+
+        </div>
+        <div class="middle"></div>
+
+        <div class="right">
+            <div class="top">
+
+            </div>
+            <div class="messages">
+                <ul id="chat"></ul>
+            </div>
+            <div class="builtin-messages">
+                <!-- Quick Messages -->
+                <button class="button">Hello!</button>
+                <button class="button">How are you?</button>
+                <button class="button">Good morning!</button>
+                <button class="button">Good afternoon!</button>
+                <button class="button">Good evening!</button>
+                <button class="button">Nice to meet you!</button>
+                <button class="button">How’s your day going?</button>
+                <button class="button">What’s up?</button>
+                <button class="button">Long time no see!</button>
+                <button class="button">How’s everything?</button>
+                
+                <!-- Polite Expressions -->
+                <button class="button">Thank you!</button>
+                <button class="button">You’re welcome.</button>
+                <button class="button">I appreciate it.</button>
+                <button class="button">Please.</button>
+                <button class="button">Sorry about that.</button>
+                <button class="button">Excuse me.</button>
+                <button class="button">No problem!</button>
+                <button class="button">I’ll get back to you.</button>
+                <button class="button">It was a pleasure.</button>
+                <button class="button">Can I help you?</button>
+                
+                <!-- Small Talk -->
+                <button class="button">How’s the weather?</button>
+                <button class="button">What’s your favorite hobby?</button>
+                <button class="button">Do you have any plans for the weekend?</button>
+                <button class="button">What are you working on?</button>
+                <button class="button">Did you see the game last night?</button>
+                <button class="button">Have you seen any good movies lately?</button>
+                <button class="button">Do you like music?</button>
+                <button class="button">How’s your family?</button>
+                <button class="button">Where are you from?</button>
+                <button class="button">What’s your favorite food?</button>
+                
+                <!-- Work/Professional -->
+                <button class="button">Let’s schedule a meeting.</button>
+                <button class="button">Can you send me the file?</button>
+                <button class="button">Do you need help?</button>
+                <button class="button">Let’s discuss the project.</button>
+                <button class="button">What’s the deadline?</button>
+                <button class="button">Could you review this?</button>
+                <button class="button">I’ll send an update soon.</button>
+                <button class="button">Let me know if you need assistance.</button>
+                <button class="button">Thank you for your feedback!</button>
+                <button class="button">Can we extend the deadline?</button>
+              
+                <!-- Casual Questions -->
+                <button class="button">How’s your weekend?</button>
+                <button class="button">What’s your favorite TV show?</button>
+                <button class="button">Do you like traveling?</button>
+                <button class="button">What’s your favorite destination?</button>
+                <button class="button">How’s your pet?</button>
+                <button class="button">Do you enjoy reading books?</button>
+                <button class="button">Have you tried any new recipes lately?</button>
+                <button class="button">What’s your favorite holiday?</button>
+                <button class="button">Do you play video games?</button>
+                <button class="button">What’s your favorite sport?</button>
+                
+                <!-- Quick Replies -->
+                <button class="button">Yes</button>
+                <button class="button">No</button>
+                <button class="button">Maybe</button>
+                <button class="button">Sure!</button>
+                <button class="button">Of course!</button>
+                <button class="button">I don’t know.</button>
+                <button class="button">I’ll think about it.</button>
+                <button class="button">Sounds good!</button>
+                <button class="button">Let’s do it!</button>
+                <button class="button">Not sure yet.</button>
+              
+                <!-- Other Useful Messages -->
+                <button class="button">Where should we meet?</button>
+                <button class="button">What time works for you?</button>
+                <button class="button">Let me check my calendar.</button>
+                <button class="button">I’ll be there soon.</button>
+                <button class="button">Running a little late.</button>
+                <button class="button">Can you send me directions?</button>
+                <button class="button">Let’s catch up later.</button>
+                <button class="button">It’s been great talking to you!</button>
+                <button class="button">Let’s stay in touch.</button>
+                <button class="button">Take care!</button>
+              </div>
+            <div class="input">
+                <input type="text" placeholder="type here.." id="message" onkeypress="sendEnter(event)">
+                <button  id="speech"><i class="fa-solid fa-microphone-lines"></i></button>
+                <button onclick="messageSendhanlder()"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+     </div>
 
     <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase.js"></script>
     <script>
+         var messageInput = document.getElementById('message');//getting message input
+        const allbtns = document.querySelectorAll('.button');
+        console.log(allbtns);
+        for(let i of allbtns){
+            console.log(i.innerText);
+            i.addEventListener('click', ()=>{
+                messageInput.value += i.innerText  + " " 
+                messageSendhanlder();
+            })
+        }
+        
+
+        const setScreenHeight = () => {
+        const vh = window.innerHeight * 0.01; // 1% of the viewport height
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+        };
+
+        // Set the height on load and resize
+        window.addEventListener('resize', setScreenHeight);
+        window.addEventListener('load', setScreenHeight);
         const firebaseConfig = {
             apiKey: "AIzaSyBieLWRvpgHFtYDSC4JZAxGpX6TybvBY_I",
             authDomain: "chat-application-5f972.firebaseapp.com",
@@ -62,7 +188,7 @@
 
             window.location.href='./index.html'
         }else{
-            h4TagEmail.innerText = 'Hello 👋 ' + user
+            // h4TagEmail.innerText = 'Hello 👋 ' + user
         }
 
 
@@ -89,7 +215,7 @@
      
 
         function messageSendhanlder(){
-            let messageInput = document.getElementById('message');//getting message input
+           
             // console.log(messageInput.value);
             if(messageInput.value ==''){
                 alert('please enter the message')
@@ -136,14 +262,20 @@
                       chatScreen.innerHTML += `
                   <li class='my_message'>
                     
-                        <div>${message}</div>
+                        <div class="message">${message}</div>
+                         <div style="display:flex; align-items:center; gap:5px">
                          <img src="https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg" alt="loading.."> 
+                        <div class="icon" onclick="speekMessage('${message}')"> <i class="fa-solid fa-circle-play"></i></div>
+                        </div>
                     </li>`
                 }else{
                       chatScreen.innerHTML += `
                      <li class='friend_message'>
-                        <img src="https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg" alt="loading.."> 
-                        <div>${message}</div>
+                       <div style="display:flex; align-items:center; gap:5px">
+                         <img src="https://static.vecteezy.com/system/resources/thumbnails/003/337/584/small/default-avatar-photo-placeholder-profile-icon-vector.jpg" alt="loading.."> 
+                        <div class="icon" onclick="speekMessage('${message}')"> <i class="fa-solid fa-circle-play"></i></div>
+                        </div>
+                        <div class="message">${message}</div>
                          </li>`
                 }
             })
@@ -162,10 +294,20 @@
         
 
 
-        messageFolder.on('child_added', async ()=>{
+        messageFolder.on('child_added', async (data)=>{
             console.log('added');
             // let audio = new Audio('./assets/media/sent_sound.mp3');
             // audio.play();
+            console.log('new message = ', data.val());
+            const {message, time, userEmail} = data.val();
+            // alert(data.val())
+           
+            if(userEmail != localStorage.getItem('user')){
+                showNotification(message,  {
+            body: "This is a browser notification example.", // Some text to show up on the notification
+            icon: "icon.png", // Grab an icon on off the web
+            })
+            }
 
             sound.play().catch(error => {
             console.error('Error playing audio:', error);
@@ -182,7 +324,108 @@
                 messageSendhanlder()
             }
         }
-    </script>
-    
+
+
+
+            function showNotification(title, options) {
+            if (!('Notification' in window)) {
+                console.error('This browser does not support notifications.');
+                return;
+            }
+
+            if (Notification.permission === 'granted') {
+                new Notification(title, options);
+            } else if (Notification.permission !== 'denied') {
+                Notification.requestPermission().then(permission => {
+                if (permission === 'granted') {
+                    new Notification("This is a title", { body: "Hello world" });
+                }
+                });
+            }
+        }
+
+
+        function speekMessage(message){
+            const utterance = new SpeechSynthesisUtterance(message);
+            const allvoices = speechSynthesis.getVoices(); //array
+            utterance.voice = allvoices[1];
+            speechSynthesis.speak(utterance);
+        }
+
+        var speechBtn = document.getElementById('speech');
+        // const speechBtn = document.getElementById('speech');
+    const resultDisplay = document.getElementById('result');
+    let recognition; // Keep recognition instance global to manage its state
+    let isListening = false;
+
+    function initializeSpeechRecognition() {
+      // Create recognition instance if it doesn't exist
+      if (!recognition) {
+        recognition = new webkitSpeechRecognition();
+        recognition.continuous = false; // Stops after a single result
+        recognition.lang = 'en-US'; // Set language to English
+        recognition.interimResults = false; // Show only final results
+
+        // Event: Recognition started
+        recognition.onstart = () => {
+          isListening = true;
+ 
+          speechBtn.innerHTML = '<i class="fa-regular fa-circle-stop"></i>'
+          console.log('Recognition started');
+        };
+
+        // Event: Recognition result
+        recognition.onresult = (event) => {
+          const transcript = event.results[0][0].transcript; // Get the recognized text
+          console.log('Transcript:', transcript);
+          messageInput.value = transcript;
+          messageSendhanlder()
+        };
+
+        // Event: Recognition ended
+        recognition.onend = () => {
+          isListening = false;
+          speechBtn.innerHTML = '<i class="fa-solid fa-microphone"></i>';
+          console.log('Recognition ended');
+        };
+
+        // Event: Error handling
+        recognition.onerror = (event) => {
+          isListening = false;
+          speechBtn.innerHTML = '<i class="fa-solid fa-microphone"></i>';
+          console.error('Recognition error:', event.error);
+
+          if (event.error === 'aborted') {
+            console.log('Recognition was aborted. Restarting...');
+          } else {
+            alert(`An error occurred: ${event.error}`);
+          }
+        };
+      }
+    }
+
+    function startSpeechRecognition() {
+      if (isListening) {
+        console.log('Recognition is already active.');
+        recognition.stop()
+        return; // Prevent multiple instances
+
+      }
+
+      // Request microphone permission
+      navigator.mediaDevices.getUserMedia({ audio: true })
+        .then(() => {
+          initializeSpeechRecognition();
+          recognition.start();
+        })
+        .catch((error) => {
+          console.error('Microphone permission denied:', error);
+          alert('Please allow microphone access to use speech recognition.');
+        });
+    }
+
+    // Add event listener to the button
+    speechBtn.addEventListener('click', startSpeechRecognition);
+  </script>
 </body>
 </html>

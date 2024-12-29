@@ -4,23 +4,182 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .div{
+            background-color: white;
+           
+        }
+        .pa{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 600;
+           
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .card{
+            padding: 20px;
+        }
+        p{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bold;
+        }
+        /* *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+           
+        }
+        .formdata{
+         padding: 15px;
+       
+        }
+        .carddata input{
+            width: 100%;
+            border: none;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            padding: 5px;
+            border: 2px solid rgba(90, 148, 3, 0.726);
+        }
+        .carddata label{
+            font-weight: bold;
+        }
+        .container{
+            min-width:300px;
+            min-height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+        
+        #btn{
+           width: 100%;
+           border: none;
+          background-color:rgba(128, 0, 128, 0.685);
+           border-radius: 10px;
+           font-size: 1.2rem;
+           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+           margin-top: 10px;
+           
+           padding: 8px;
+           color:white;
+           
+           
+        }
+        h1{
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: rgba(176, 245, 16, 0.719);
+            margin-top: 5px;
+        }
+        small{
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-bottom: 10px;
+        }
+        .card{
+            border: 2px solid rgba(120, 192, 12, 0.568);
+            min-width:300px ;
+            min-height: 300px;
+            margin-top: 20px;
+          
+        } */
+    </style>
 </head>
 <body>
-    <center>
-        <h1>Create account</h1>
-    </center>
+<div class="div col-md-6">
+   <div class="pa text-center m-3">
+    <h4>Register</h4>
+    <p>Get your Chatvia account now.</p>
+   </div>
+    <div class="container">
+        <div class="card">
+         <form action="" class="was-validated">
+            <div class="carddata">
+                <p class="class="form-label"">Email</p>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fa-regular fa-envelope"></i></span>
+                    <input type="text" class="form-control" placeholder="Enter Email" required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+            </div>
 
-    <section class="container">
-        <form>
-            <label for="email">Email Address</label><br>
-            <input type="email" placeholder="Enter your email" id="email"> <br> <br>
+            <div class="carddata">
+                <p class="class="form-label"">Username</p>
+                <div class="carddata">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
+                        <input type="text" class="form-control" placeholder="admin@themesbrand.com" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                </div>
+            </div>
 
-            <label for="password">Password</label> <br>
-            <input type="password" placeholder="Enter your password" id="password"> <br> <br>
-            <small>Do have an already  account? <a href="./index.html">Log in</a></small><br>
-            <button type="button" onclick="registerHanlder()" id="btn">Create Account</button>
-        </form>
-    </section>
+            <div class="carddata">
+                <p class="class="form-label"">Password</p>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fa-regular fa-lock"></i></span>
+                    <input type="text" class="form-control" placeholder="........" required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+            </div>
+
+         </form>
+         <button class="btn btn-white fs-5 m-3 p-2 bg-primary">Register</button>
+         <div class="data text-center">
+            <p>By registering you agree to the Chatvia 
+                <a href="#">Terms of Use</a>
+             </p>
+         </div>
+
+        </div>
+    </div>
+    <div class="para text-center">
+        <p>Already have an account ? <a href="./index.html">Signin</a></p>
+        <p>© 2024 Chatvia. Crafted with  ❤️by Themesbrand</p>
+    </div>
+</div>
+
+
+    <!-- <section class="container ">
+        <div class="card  col-md-6  ">
+            <h1>Create account</h1>
+         <form>
+     <div class="formdata ">
+     <div class="carddata">
+     <label for="email">Email Address</label><br>
+     <input type="email" placeholder="Enter your email" id="email"> <br> 
+     </div>
+     
+   <div class="carddata">
+    <label for="password">Password</label> <br>
+    <input type="password" placeholder="Enter your password" id="password"> <br> <br>
+    <small>Do have an already  account? <a href="./index.html">Log in</a></small><br>
+    <button type="button" onclick="registerHanlder()" id="btn">Create Account</button>
+   </div>
+    
+ </div>
+  -->
 
     <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
     <script>
