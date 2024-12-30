@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Group Chat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./media.css">
@@ -35,8 +38,36 @@
 
         <div class="right">
             <div class="top">
-
+             <div class="containercell d-flex">
+              <div class="imagescell">
+                <img src="https://media.gettyimages.com/id/1293903541/photo/young-woman-stock-photo.jpg?s=612x612&w=gi&k=20&c=_xH0YFaaK7wSFQpVt7I5St3Yn2Et9OkEdkdcrz0YJsE=" alt="images" style="width: 50px; height: 50px;border-radius: 50%; margin-bottom: 10px;border: 2px solid gray;">
+                <p >Doris Brown</p>
             </div>
+            <div class="datarow d-flex justify-content-end align-items-center">
+              <ul class="d-flex gap-3">
+                <li><a href=""><i class="fa-regular fa-magnifying-glass"></i></a></li>
+                <li><a href=""><i class="fa-regular fa-user"></i></a></li>
+               <li><a href=""><i class="fa-light fa-video"></i></a></li>
+                
+              </ul>
+            </div>
+            
+              
+           
+           
+             </div>
+          
+            </div>
+
+
+
+
+
+
+
+
+
+
             <div class="messages">
                 <ul id="chat"></ul>
             </div>
@@ -157,14 +188,14 @@
         window.addEventListener('resize', setScreenHeight);
         window.addEventListener('load', setScreenHeight);
         const firebaseConfig = {
-            apiKey: "AIzaSyBieLWRvpgHFtYDSC4JZAxGpX6TybvBY_I",
-            authDomain: "chat-application-5f972.firebaseapp.com",
-            projectId: "chat-application-5f972",
-            storageBucket: "chat-application-5f972.firebasestorage.app",
-            messagingSenderId: "733620020619",
-            appId: "1:733620020619:web:a77e30a657a5a9386bfb8e",
-            measurementId: "G-SBR0Q3159T"
-        };
+  apiKey: "AIzaSyD2It0ntXOso0myfODLgHmdu2CbVgmNKUE",
+  authDomain: "chatapp-93abd.firebaseapp.com",
+  projectId: "chatapp-93abd",
+  storageBucket: "chatapp-93abd.firebasestorage.app",
+  messagingSenderId: "656812750260",
+  appId: "1:656812750260:web:947dd71f5e59285ace6ee1",
+  measurementId: "G-QHPJ6X3LEG"
+};
         const app = firebase.initializeApp(firebaseConfig);//we are intializing firebase confirgurations in app
         // const authenticationRoom = firebase.auth(); //importing authentication room from firebase to create users
         const databaseRoom = firebase.database(); //we are importing database room to store messages in database

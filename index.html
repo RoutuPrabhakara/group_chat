@@ -96,7 +96,7 @@ background-color: rgba(198, 206, 212, 0.24);
                         <p class="form-label">Username</p>
                         <div class="input-group ">
                             <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
-                            <input type="text" class="form-control" placeholder="admin@themesbrand.com" required>
+                            <input type="text" class="form-control" placeholder="admin@themesbrand.com" required id="email">
                           
                             <div class="valid-feedback" style="text-align: left;">Valid.</div>
                             <div class="invalid-feedback " style="text-align: left;">Please fill out this field.</div>
@@ -110,7 +110,7 @@ background-color: rgba(198, 206, 212, 0.24);
                     <div class="carddata">
                         <div class="input-group">
                             <span class="input-group-text"><i class="fa-regular fa-lock"></i></span>
-                            <input type="text" class="form-control" placeholder="........" required>
+                            <input type="text" class="form-control" placeholder="........" required id="password">
                             
                                 <div class="valid-feedback" style="text-align: left;">Valid.</div>
                                 <div class="invalid-feedback " style="text-align: left;">Please fill out this field.</div>
@@ -125,7 +125,7 @@ background-color: rgba(198, 206, 212, 0.24);
                     </div>
                     
                 </form>
-                <button class="cell">Sign in</button>
+                <button class="cell" onclick="loginHandler()" id="btn">Sign in</button>
             </div>
         </div>
        
@@ -141,15 +141,15 @@ background-color: rgba(198, 206, 212, 0.24);
    
     <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
     <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyBieLWRvpgHFtYDSC4JZAxGpX6TybvBY_I",
-            authDomain: "chat-application-5f972.firebaseapp.com",
-            projectId: "chat-application-5f972",
-            storageBucket: "chat-application-5f972.firebasestorage.app",
-            messagingSenderId: "733620020619",
-            appId: "1:733620020619:web:a77e30a657a5a9386bfb8e",
-            measurementId: "G-SBR0Q3159T"
-        };
+       const firebaseConfig = {
+  apiKey: "AIzaSyD2It0ntXOso0myfODLgHmdu2CbVgmNKUE",
+  authDomain: "chatapp-93abd.firebaseapp.com",
+  projectId: "chatapp-93abd",
+  storageBucket: "chatapp-93abd.firebasestorage.app",
+  messagingSenderId: "656812750260",
+  appId: "1:656812750260:web:947dd71f5e59285ace6ee1",
+  measurementId: "G-QHPJ6X3LEG"
+};
         const app = firebase.initializeApp(firebaseConfig);//we are intializing firebase confirgurations in app
         const authenticationRoom = firebase.auth(); //importing authentication room from firebase to create users
         // const databaseRoom = firebase.database(); //we are importing database room to store messages in database
@@ -157,7 +157,7 @@ background-color: rgba(198, 206, 212, 0.24);
   
         let email = document.getElementById('email');
         let password = document.getElementById('password');
-        let button = document.getElementById('btn');
+        let btn = document.getElementById('btn');
 
        
 

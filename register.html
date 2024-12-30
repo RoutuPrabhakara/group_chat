@@ -116,7 +116,7 @@
                 <p class="class="form-label"">Email</p>
                 <div class="input-group">
                     <span class="input-group-text"><i class="fa-regular fa-envelope"></i></span>
-                    <input type="text" class="form-control" placeholder="Enter Email" required>
+                    <input type="text" class="form-control" placeholder="Enter Email" required id="email">
                     <div class="valid-feedback">Valid.</div>
                     <div class="invalid-feedback">Please fill out this field.</div>
                 </div>
@@ -127,7 +127,7 @@
                 <div class="carddata">
                     <div class="input-group">
                         <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
-                        <input type="text" class="form-control" placeholder="admin@themesbrand.com" required>
+                        <input type="text" class="form-control" placeholder="admin@themesbrand.com" required id="password">
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out this field.</div>
                     </div>
@@ -145,7 +145,7 @@
             </div>
 
          </form>
-         <button class="btn btn-white fs-5 m-3 p-2 bg-primary">Register</button>
+         <button class="btn btn-white fs-5 m-3 p-2 bg-primary" onclick="registerHanlder()" id="btn">Register</button>
          <div class="data text-center">
             <p>By registering you agree to the Chatvia 
                 <a href="#">Terms of Use</a>
@@ -183,15 +183,15 @@
 
     <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
     <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyBieLWRvpgHFtYDSC4JZAxGpX6TybvBY_I",
-            authDomain: "chat-application-5f972.firebaseapp.com",
-            projectId: "chat-application-5f972",
-            storageBucket: "chat-application-5f972.firebasestorage.app",
-            messagingSenderId: "733620020619",
-            appId: "1:733620020619:web:a77e30a657a5a9386bfb8e",
-            measurementId: "G-SBR0Q3159T"
-        };
+           const firebaseConfig = {
+            apiKey: "AIzaSyD2It0ntXOso0myfODLgHmdu2CbVgmNKUE",
+            authDomain: "chatapp-93abd.firebaseapp.com",
+            projectId: "chatapp-93abd",
+            storageBucket: "chatapp-93abd.firebasestorage.app",
+            messagingSenderId: "656812750260",
+            appId: "1:656812750260:web:947dd71f5e59285ace6ee1",
+            measurementId: "G-QHPJ6X3LEG"
+            };
         const app = firebase.initializeApp(firebaseConfig);//we are intializing firebase confirgurations in app
         const authenticationRoom = firebase.auth(); //importing authentication room from firebase to create users
         // const databaseRoom = firebase.database(); //we are importing database room to store messages in database
@@ -199,7 +199,7 @@
   
         let email = document.getElementById('email');
         let password = document.getElementById('password');
-        let button = document.getElementById('btn');
+        let btn = document.getElementById('btn');
 
        
 
